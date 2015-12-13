@@ -1,0 +1,18 @@
+
+#!/usr/bin/env Rscript
+
+library(RMySQL) # will load DBI as well
+
+# Establish connection to MySQL using RMySQL
+drv <- dbDriver("MySQL")
+
+con <- dbConnect(drv, user = "root", password = "hard_coded", dbname = "sara")
+
+df <- dbGetQuery(con, paste("select family from plant_dictionary"))
+
+summary(df)
+boxplot(df)
+
+
+
+dbDisconnect(con)
