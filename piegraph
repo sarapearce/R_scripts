@@ -3,7 +3,7 @@ library(RMySQL) # will load DBI as well
 # Establish connection to MySQL using RMySQL
 drv <- dbDriver("MySQL")
 
-con <- dbConnect(drv, user = "root", password = "hard_coded", dbname = "sara")
+con <- dbConnect(drv, user = , password = , dbname = "sara")
 
 df <- dbGetQuery(con, paste("select generation from family"))
 
